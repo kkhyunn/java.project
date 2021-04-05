@@ -1,0 +1,50 @@
+package com.ict03.class01;
+
+import java.util.Scanner;
+
+public class Ex10_main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("인원수 : ");
+		int su = sc.nextInt();
+		
+		// 상품명과 가격을 가지는 배열
+		Ex10[] offer = new Ex10[su];
+		for (int i = 0; i < offer.length; i++) {
+			System.out.println("1.아메리카노(2500)");
+			System.out.println("2.카페모카(3000)");
+			System.out.println("3.카페라떼(3500)");
+			System.out.println("4.자몽쥬스(3000)");
+			System.out.println("선택하세요 >>");
+			int menu = sc.nextInt();
+			Ex10 product = new Ex10();
+			if (menu == 1) {
+				product.setName("아메리카노");
+				product.setPrice(2500);
+			}
+			else if (menu == 2) {
+				product.setName("카페모카");
+				product.setPrice(3000);
+			}
+			else if (menu == 3) {
+				product.setName("카페라떼");
+				product.setPrice(3500);
+			}
+			else if (menu == 4) {
+				product.setName("자몽쥬스");
+				product.setPrice(3000);
+			}
+			offer[i] = product;
+		}
+			
+		int sum = 0;
+		for (int i = 0; i < offer.length; i++) {
+			sum = sum + offer[i].getPrice();
+		}
+		System.out.println("총 액 : " + sum);
+		System.out.print("입 금 액 : ");
+		int input = sc.nextInt();
+		System.out.print("잔 돈 : " + (input - sum));	
+	}
+}
