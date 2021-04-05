@@ -2,11 +2,30 @@ package com.ict04.exception;
 
 public class Ex01 {
 	public static void main(String[] args) {
-		// �옄諛붿뿉�꽌 �삤瑜섍� 諛쒖깮�븯硫� 臾댁“嫄� �봽濡쒓렇�옩�쓣 醫낅즺�떆�궓�떎.
-		// 洹몃윭�굹 媛�踰쇱슫 �삁�쇅�굹 �삁�궛�맂 �삁�쇅瑜� 蹂꾨룄濡� 泥섎━�븯�뒗 諛⑸쾿�쓣 �궗�슜�븯硫�
-		// 臾댁“嫄� �봽濡쒓렇�옩�씠 醫낅즺�릺�뒗 寃껋씠 �븘�땲�씪 �젙�긽醫낅즺瑜� �븷 �닔 �엳�룄濡� �븯�뒗 諛⑸쾿�쓣
-		// �삁�쇅 泥섎━�씪怨� �븳�떎.
-		// 추가 내용
-		int s1 = 0;
+		// 예외처리 : Exception.
+		//			  try ~ catch ~
+		// 목적 : 비정상적인 종료를 정상적인 종료로 유도,
+		//		  예외 발생 시 예외에 다한 처리를 해준다.
+		// 형식 : try {
+		//              예외가 발생할 수 있는 문장;
+		//              예외가 발생할 수 있는 문장;
+		//              예외가 발생할 수 있는 문장;
+		//	      } catch(예외발생 객체 e) {
+		//				예외 발생시 처리하는 문장;
+		//		  }
+		
+		try {
+			int[] var = {10, 20, 30};
+			for (int i = 0; i <= var.length; i++) {
+				System.out.println(1);
+				System.out.println(2);
+				System.out.println("var[" + i + "] = " + var[i]);
+				System.out.println(3);
+				System.out.println(4);
+			}
+		} catch (Exception e) {
+			
+		}
+		System.out.println("수고하셨습니다.");
 	}
 }
