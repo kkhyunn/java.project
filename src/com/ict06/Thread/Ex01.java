@@ -33,6 +33,7 @@ public class Ex01 {
 		System.out.println("1" + Thread.currentThread().getName());
 		test.add(5, 8);
 		System.out.println("4" + Thread.currentThread().getName());
+		
 		int res = test.sub(8, 5);
 		System.out.println("7" + Thread.currentThread().getName());
 		System.out.println(res);
