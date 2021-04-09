@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 
 public class Ex12 {
 	public static void main(String[] args) {
+		// 시험 문제 중 하나
 		// c:\\study\\util\\java_1.png 파일을 
 		// c:\\study\\util\\res\\ 안에 이동하는 코딩
 		

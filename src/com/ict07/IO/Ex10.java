@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 
 public class Ex10 {
 	public static void main(String[] args) {
+		// 시험 문제 중 하나
 		// c:\\study\\util\\test100.txt 파일안에
 		// 내용을 읽는 파일을 작성하시오
 		String pathname = "C:" + File.separator + "study" + File.separator + "util" 
