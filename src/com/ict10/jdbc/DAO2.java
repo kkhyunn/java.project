@@ -27,7 +27,7 @@ public class DAO2 {
 	}
 	
 	// DB에 접속하는 역할을 수행한다.
-	public Connection getConnetion() {
+	public Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/test01db?characterEncoding=utf-8&serverTimezone=UTC";
@@ -46,7 +46,7 @@ public class DAO2 {
 	public void getList() {
 		try {
 			// DB 접속
-			conn = getConnetion();
+			conn = getConnection();
 			
 			String sql = "select * from book order by bookid";
 			pstmt = conn.prepareStatement(sql);
@@ -75,7 +75,7 @@ public class DAO2 {
 	// 삽입하는 메소드
 	public void getInsert(int i_bookid, String i_bookname, String i_publisher, int i_price) {
 		try {
-			conn = getConnetion();
+			conn = getConnection();
 			
 			String sql = "insert into book values(?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
@@ -104,7 +104,7 @@ public class DAO2 {
 	// 삭제하는 메소드
 	public void getDelete(int i_bookid) {
 		try {
-			conn = getConnetion();
+			conn = getConnection();
 			
 			String sql = "delete from book where bookid = ?";
 			pstmt = conn.prepareStatement(sql);
@@ -131,7 +131,7 @@ public class DAO2 {
 	// 수정하는 메소드
 	public void getUpdate(int u_bookid, String u_bookname, String u_publisher, int u_price) {
 		try {
-			conn = getConnetion();
+			conn = getConnection();
 			
 			String sql = "update book set bookname = ?, publisher = ?, price = ? where bookid = ?";
 			pstmt = conn.prepareStatement(sql);
@@ -163,7 +163,7 @@ public class DAO2 {
 	// 검색하는 메소드
 	public void getSelect(int i_bookid) {
 		try {
-			conn = getConnetion();
+			conn = getConnection();
 			
 			String sql = "select * from book where bookid = ?";
 			pstmt = conn.prepareStatement(sql);

@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class Ex02 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		System.out.print("출판사를 입력하세요 >> ");
+		String msg = sc.next();
 		
 		// DB처리에 필요한 클래스
 		Connection conn = null;
@@ -25,9 +27,12 @@ public class Ex02 {
 			String password = "1111";
 			conn = DriverManager.getConnection(url, user, password);
 			// 쿼리 작성
-			String sql = "select * from book order by bookid";
+			String sql = "select * from book where publisher like ? order by bookid";
 			pstm = conn.prepareStatement(sql);
+			// ? => 바인딩 변수
+			pstm.setString(1, "%" + msg + "%");
 			rs = pstm.executeQuery();
+			System.out.println("도서번호\t도서명\t출판사\t가격");
 			while (rs.next()) {
 				System.out.print(rs.getInt("bookid") + "\t");
 				System.out.print(rs.getString("bookname") + "\t");
@@ -39,7 +44,9 @@ public class Ex02 {
 			System.out.println(e);
 		} finally {
 			try {
-				
+				rs.close();
+				pstm.close();
+				conn.close();
 			} catch (Exception e2) {
 				// TODO: handle exception
 				System.out.println(e2);
